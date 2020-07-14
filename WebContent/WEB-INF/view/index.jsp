@@ -35,6 +35,7 @@
 			<td>Enterprise Name</td>
 			<td>Area</td>
 			<td>Branches</td>
+			<td>Address</td>
 		</tr>
 
 		<c:forEach var="tempEnterprises" items="${enterprises}">
@@ -43,6 +44,16 @@
 				<td>${tempEnterprises.name}</td>
 				<td>${tempEnterprises.area}</td>
 				<td><a href="branches/${tempEnterprises.id}">See Branches</a></td>
+				<td>${tempEnterprises.address.id}</td>
+				<c:choose>
+				<c:when test="${tempEnterprises.address==null}">
+					<td><a href="address/enterprise/${0}/${tempEnterprises.id}">See Address</a></td>
+				</c:when>
+				<c:otherwise>
+					<td><a href="address/enterprise/${tempEnterprises.address.id}/${tempEnterprises.id}">See Address</a></td>
+				</c:otherwise>
+				</c:choose>
+				
 			</tr>
 		</c:forEach>
 
