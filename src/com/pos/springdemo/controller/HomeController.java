@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pos.springdemo.entity.Enterprise;
+import com.pos.springdemo.service.AddressService;
 import com.pos.springdemo.service.EnterpriseService;
 
 @Controller
@@ -20,15 +21,15 @@ public class HomeController {
 	@Autowired
 	private EnterpriseService enterpriseService;
 	
+	@Autowired
+	private AddressService addressService;
 	
 	@RequestMapping("/list")
 	public String home(Model theModel) {
 		
-		
 		List<Enterprise> theEnterprises = enterpriseService.getEnterprises();
 		
 		theModel.addAttribute("enterprises", theEnterprises);
-		
 		
 		return "index";
 	}
