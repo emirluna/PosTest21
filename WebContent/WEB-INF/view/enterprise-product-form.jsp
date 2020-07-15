@@ -3,48 +3,58 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Form registration Address</title>
+<title>Form registration Product</title>
 
 <link type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/style.css">
 
 <link type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/add-customer-style.css">
+
 </head>
 <body>
 <div id="wrapper">
 		<div id="header">
-			<h2>CRM</h2>
+			<h2>New Product</h2>
 		</div>
 	</div>
 
 
 	<div id="container">
-		<h3>Save Address</h3>
-		<form:form action="${pageContext.request.contextPath}/address/enterprise/saveAddress/${id_e}" 
-				   modelAttribute="address" method="POST">
+		<h3>Save Product</h3>
+		<form:form action="${pageContext.request.contextPath}/product/saveProduct/${enterpriseId}" 
+				modelAttribute="product" method="POST">
 			
 			<table>
 				<tr>
-					<td><label>Country: </label></td>
-					<td><form:input path="Country" /></td>
+					<td><label>Product Name: </label></td>
+					<td><form:input path="name" /></td>
 				</tr>
 				<tr>
-					<td><label>State: </label></td>
-					<td><form:input path="State" /></td>
+					<td><label>Short Name: </label></td>
+					<td><form:input path="shortName" /></td>
 				</tr>
 				<tr>
-					<td><label>City: </label></td>
-					<td><form:input path="City" /></td>
+					<td><label>Barcode: </label></td>
+					<td><form:input path="barcode" /></td>
 				</tr>
 				<tr>
-					<td><label>Street: </label></td>
-					<td><form:input path="Street" /></td>
+					<td><label>Price: </label></td>
+					<td><form:input path="price" /></td>					
+				</tr>
+					<h3>Product Details</h3>
 				</tr>
 				<tr>
-					<td><label>Number: </label></td>
-					<td><form:input path="Number" /></td>
+				
+				<tr>
+					<td><label>Brand: </label></td>
+					<td><form:input path="detail.brand" /></td>
 				</tr>
+				<tr>
+					<td><label>Description: </label></td>
+					<td><form:input path="detail.description" /></td>					
+				</tr>
+				
 				
 				<tr>
 					<td><label></label></td>

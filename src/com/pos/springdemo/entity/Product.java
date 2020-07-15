@@ -43,7 +43,7 @@ public class Product {
 	@JoinColumn(name="id_category")
 	private Category category;
 	
-	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@OneToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="id_detail")
 	private ProductDetail detail;
 	
@@ -51,7 +51,7 @@ public class Product {
 	@JoinColumn(name="id_enterprise")
 	private Enterprise enterprise;
 	
-	@OneToMany(fetch= FetchType.EAGER,
+	@OneToMany(fetch= FetchType.LAZY,
 			mappedBy="products",
 			cascade= CascadeType.ALL)
 	private List<Stock> stocks;

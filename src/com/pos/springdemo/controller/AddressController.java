@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -46,9 +47,23 @@ public class AddressController {
 		Address theAddress = new Address();
 		
 		theModel.addAttribute("address", theAddress);
+		theModel.addAttribute("id_e", id_e);
 		
 		return "address-form";
 	}
 	
+	@RequestMapping("/enterprise/saveAddress/{id_e}")
+	public String saveAddress(@PathVariable("id_e") int id, @ModelAttribute("address") Address newAddress) {
+		
+		Enterprise tempEnterprise = enterpriseService.getEnterprise(id);
+		
+		addressService.saveAddress(newAddress);
+		
+		tempEnterprise.setAddress(newAddress);
+		
+		enterpriseService.updateEnterprise(tempEnterprise);
+		
+		return "redirect:/list";
+	}
 	
 }

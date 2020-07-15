@@ -31,8 +31,8 @@
 	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
         <property name="driverClass" value="com.mysql.cj.jdbc.Driver" />
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/pos_test_02?useSSL=false&amp;serverTimezone=UTC" />
-        <property name="user" value="root" />
+        <property name="jdbcUrl" value="jdbc:mysql://192.168.1.81:3306/PosAdmin?useSSL=false&amp;serverTimezone=UTC" />
+        <property name="user" value="eljefe21" />
         <property name="password" value="20212021" /> 
 
         <!-- these are connection pool properties for C3P0 -->

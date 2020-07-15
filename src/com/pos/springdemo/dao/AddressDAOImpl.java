@@ -33,8 +33,9 @@ public class AddressDAOImpl implements AddressDAO {
 
 	@Override
 	public void saveAddress(Address A) {
-		// TODO Auto-generated method stub
-
+		Session currentSession = sessionFactory.getCurrentSession(); 
+		
+		currentSession.save(A);
 	}
 
 	@Override

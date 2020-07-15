@@ -23,9 +23,9 @@ public class AddressServiceImpl implements AddressService {
 	}
 
 	@Override
+	@Transactional
 	public void saveAddress(Address A) {
-		// TODO Auto-generated method stub
-
+		addressDAO.saveAddress(A);
 	}
 
 	@Override

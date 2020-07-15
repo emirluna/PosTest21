@@ -44,7 +44,7 @@
 				<td>${tempEnterprises.name}</td>
 				<td>${tempEnterprises.area}</td>
 				<td><a href="branches/${tempEnterprises.id}">See Branches</a></td>
-				<td>${tempEnterprises.address.id}</td>
+				<td><a href="product/${tempEnterprises.id}">See Products</a></td>
 				<c:choose>
 				<c:when test="${tempEnterprises.address==null}">
 					<td><a href="address/enterprise/${0}/${tempEnterprises.id}">See Address</a></td>

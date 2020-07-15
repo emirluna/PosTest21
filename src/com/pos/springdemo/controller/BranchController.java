@@ -47,6 +47,7 @@ public class BranchController {
 		
 		theModel.addAttribute("branch", theBranch);
 		theModel.addAttribute("id_enterprise", id);
+		
 		return "branch-form";
 	}
 	

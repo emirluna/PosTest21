@@ -32,17 +32,17 @@ public class Enterprise {
 	@Column(name="area")
 	private String Area;
 
-	@OneToOne(fetch= FetchType.EAGER,
+	@OneToOne(fetch= FetchType.LAZY,
 			cascade=CascadeType.ALL)
 	@JoinColumn(name="id_address")
 	private Address address;
 	
-	@OneToMany(fetch= FetchType.EAGER,
+	@OneToMany(fetch= FetchType.LAZY,
 			mappedBy="enterprise",
 			cascade= CascadeType.ALL)
 	private List<Branch> branches;
 	
-	@OneToMany(fetch= FetchType.LAZY,
+	@OneToMany(fetch= FetchType.EAGER,
 			mappedBy="enterprise",
 			cascade= CascadeType.ALL)
 	private List<Product> products;
